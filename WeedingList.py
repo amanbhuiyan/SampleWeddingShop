@@ -58,6 +58,9 @@ def addAnItem():
         products.append(a_newIteam)
         # Show the last item that has been  just added, with its meta data
         lengthOfList = len(products)
+        print('==============================================')
+        print('Thank you -  Your Product successfuly added to the list .')
+        print('New product information below : ')
         print(products[lengthOfList-1])
     except:
         e = sys.exc_info()
@@ -82,9 +85,14 @@ def removeAnItem():
                 if i.get('id')==idtobeDeleted:
                     # del products[idtobeDeleted]
                     products.remove(i)
+                    print('==============================================')
+                    print('Operation successful\n')
                     print('Item deleted\n')
                     break
         # Display all items after deletion an item
+            print('==============================================')
+            print('All items avilable now')
+            print('==============================================')
             for i in products:
                 print(i)
 
@@ -94,9 +102,14 @@ def removeAnItem():
             for i in products:
                 if i.get('name')==nameTobeDeleted:
                     products.remove(i)
+                    print('==============================================')
+                    print('Operation successful\n')
                     print('Item deleted\n')
                     break
         # Display all items after deletion an item
+            print('==============================================')
+            print('All items avilable now')
+            print('==============================================')
             for i in products:
                 print(i)
     except:
@@ -137,6 +150,9 @@ def purchaseAGift():
                     print('Purchased Items and Current Status ')
                     print('=================================================')
                     print(giftToBuy + ' - ' + str(quantityToBuy)  + ' items purchased and -- Remaining - ' + str(quantityremaining) + ' items')
+                    print('Brand : '+ i.get('brand'))
+                    print('Unit Price : ' + str(i.get('price')))
+                    print('=================================================')
                     print('Unpurchased Items and Current Status ')
                     print('=================================================')
 
@@ -146,7 +162,7 @@ def purchaseAGift():
                     print('Please feel free to buy later or be in touch with us if you need any help ')
                     print('=================================================')
 
-            print(i.get('name') + ' - Avilable items  -  ' + str(i.get('in_stock_quantity')))
+            print(i.get('name') + '   - Avilable quantity  -  ' + str(i.get('in_stock_quantity')) + ' unit')
 
     except:
         e = sys.exc_info()
